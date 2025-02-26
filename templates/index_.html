@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { display: inline-block; margin-top: 20px; }
+        input { margin: 5px; padding: 8px; }
+        button { padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Iris Flower Predictor</h1>
+    <form action="/predict" method="post">
+        <label>Sepal Length (cm):</label>
+        <input type="text" name="sepal length (cm)" required><br>
+        
+        <label>Sepal Width (cm):</label>
+        <input type="text" name="sepal width (cm)" required><br>
+        
+        <label>Petal Length (cm):</label>
+        <input type="text" name="petal length (cm)" required><br>
+        
+        <label>Petal Width (cm):</label>
+        <input type="text" name="petal width (cm)" required><br>
+        
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
